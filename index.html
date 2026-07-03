@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanha Aprenda tudo com a Qive — Junho/Julho 2026 | Qive SMB</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+  :root {
+    --orange: #E95A1C;
+    --orange-light: #FFF0E8;
+    --orange-mid: #F97C45;
+    --dark: #1A1A1A;
+    --dark-2: #2E2E2E;
+    --mid: #6B6B6B;
+    --light: #F5F4F0;
+    --border: #E5E3DC;
+    --white: #FFFFFF;
+    --green: #1D7A4B;
+    --green-light: #E6F5EE;
+    --red: #C0392B;
+    --red-light: #FDEDEB;
+    --blue: #1A5FAD;
+    --blue-light: #EAF1FC;
+    --amber: #B85C00;
+    --amber-light: #FFF3E0;
+    --purple: #6B3FA0;
+    --purple-light: #F0E9FA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* HEADER */
+  .hero {
+    background: var(--dark);
+    color: var(--white);
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.12;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 20%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: var(--orange-mid);
+    opacity: 0.08;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 1.15;
+    max-width: 680px;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--orange-mid); }
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    max-width: 560px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .hero-meta-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.8px; }
+  .hero-meta-value { font-size: 15px; font-weight: 500; }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 48px 0; }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .section-label .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+  .section-label h2 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+
+  p { color: var(--mid); margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  /* INSIGHT BOXES */
+  .insight-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .insight {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .insight.good { border-left: 3px solid var(--green); }
+  .insight.bad { border-left: 3px solid var(--red); }
+  .insight-label { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+  .insight.good .insight-label { color: var(--green); }
+  .insight.bad .insight-label { color: var(--red); }
+  .insight p { font-size: 13px; color: var(--dark-2); margin: 0; }
+
+  /* CALENDAR */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .cal-day {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    min-height: 120px;
+  }
+  .cal-day.highlight { border-color: var(--orange); border-top: 3px solid var(--orange); }
+  .cal-day.inactive { background: var(--light); opacity: 0.5; }
+  .cal-date { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+  .cal-day.highlight .cal-date { color: var(--orange); }
+  .cal-weekday { font-size: 10px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+  .cal-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin: 2px 2px 2px 0;
+  }
+  .tag-email { background: var(--blue-light); color: var(--blue); }
+  .tag-wpp { background: var(--green-light); color: var(--green); }
+  .tag-inapp { background: var(--amber-light); color: var(--amber); }
+  .tag-chat { background: var(--purple-light); color: var(--purple); }
+  .tag-off { background: var(--light); color: var(--mid); }
+
+  /* DISPARO CARD */
+  .disparo {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .disparo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--light);
+  }
+  .disparo-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--mid);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .disparo-canal {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .disparo-date { font-size: 12px; color: var(--mid); }
+  .disparo-body { padding: 20px; }
+  .disparo-title { font-size: 15px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+  .disparo-sub { font-size: 13px; color: var(--mid); margin-bottom: 16px; }
+
+  .copy-box {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--dark-2);
+    line-height: 1.6;
+    position: relative;
+  }
+  .copy-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+  .copy-meta { font-size: 11.5px; color: var(--mid); margin-bottom: 8px; }
+  .copy-meta b { color: var(--dark-2); font-weight: 600; }
+  .copy-subject {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .copy-body { white-space: pre-line; }
+
+  /* COPY BUTTON */
+  .copy-btn {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--dark);
+    color: var(--white);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.18s ease;
+  }
+  .copy-btn:hover { background: var(--orange); }
+  .copy-btn.copied { background: var(--green); }
+  .copy-btn svg { width: 13px; height: 13px; }
+
+  /* BRIEFING CRIATIVO */
+  .briefing {
+    background: var(--orange-light);
+    border: 1px solid #F5C9AC;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 14px;
+  }
+  .briefing-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--orange);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .briefing table { width: 100%; font-size: 12.5px; border-collapse: collapse; }
+  .briefing td { padding: 5px 0; vertical-align: top; }
+  .briefing td:first-child { width: 120px; color: var(--mid); font-weight: 500; }
+  .briefing td:last-child { color: var(--dark-2); }
+
+  .briefing.body-brief { background: var(--blue-light); border-color: #BBD3F0; }
+  .briefing.body-brief .briefing-label { color: var(--blue); }
+  .brief-asset { padding: 9px 0; border-bottom: 1px dashed #BBD3F0; }
+  .brief-asset:last-child { border-bottom: none; }
+  .brief-asset .ba-name { font-size: 12.5px; font-weight: 600; color: var(--blue); margin-bottom: 3px; }
+  .brief-asset .ba-spec { font-size: 12px; color: var(--dark-2); line-height: 1.55; }
+  .brief-asset .ba-spec b { color: var(--mid); font-weight: 600; }
+
+  /* KPI TABLE */
+  .kpi-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .kpi-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--dark);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+  .kpi-table th:first-child { border-radius: 6px 0 0 0; }
+  .kpi-table th:last-child { border-radius: 0 6px 0 0; }
+  .kpi-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .kpi-table tr:last-child td { border-bottom: none; }
+  .kpi-table tr:nth-child(even) td { background: var(--light); }
+  .kpi-table .highlight-cell { font-weight: 600; color: var(--orange); }
+
+  /* PROJECAO */
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .proj-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .proj-card.featured {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: white;
+  }
+  .proj-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--orange); }
+  .proj-card.featured .proj-num { color: var(--orange-mid); }
+  .proj-desc { font-size: 12px; color: var(--mid); margin-top: 4px; }
+  .proj-card.featured .proj-desc { color: rgba(255,255,255,0.5); }
+  .proj-label { font-size: 13px; font-weight: 500; color: var(--dark); margin-top: 8px; }
+  .proj-card.featured .proj-label { color: white; }
+
+  /* TAGS DE CANAL */
+  .canal-email { background: var(--blue-light); color: var(--blue); }
+  .canal-wpp { background: var(--green-light); color: var(--green); }
+  .canal-inapp { background: var(--amber-light); color: var(--amber); }
+  .canal-chat { background: var(--purple-light); color: var(--purple); }
+
+  /* DIVIDER */
+  .week-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 20px;
+  }
+  .week-header .week-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: var(--orange-light);
+    padding: 4px 12px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .week-header .week-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .week-header .week-theme {
+    font-size: 13px;
+    color: var(--mid);
+    flex-shrink: 0;
+  }
+
+  /* ONDA BANNER */
+  .onda-banner {
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 36px 0 8px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .onda-banner.o1 { background: linear-gradient(110deg, #1A1A1A 0%, #2E2E2E 60%, #E95A1C 180%); }
+  .onda-banner.o2 { background: linear-gradient(110deg, #1A1A1A 0%, #2E2E2E 60%, #1A5FAD 180%); }
+  .onda-banner.o3 { background: linear-gradient(110deg, #1A1A1A 0%, #2E2E2E 60%, #1D7A4B 180%); }
+  .onda-tag { font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--orange-mid); margin-bottom: 6px; }
+  .onda-banner h4 { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin-bottom: 6px; }
+  .onda-banner p { color: rgba(255,255,255,0.7); font-size: 13px; margin: 0; max-width: 640px; }
+
+  /* DOC SUMMARY */
+  .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .doc-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .doc-item-label { font-size: 11px; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .doc-item-value { font-size: 14px; color: var(--dark); font-weight: 500; }
+  .doc-item-value.small { font-size: 13px; font-weight: 400; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+  }
+  footer span { color: var(--orange-mid); }
+
+  hr.subtle { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  @media (max-width: 720px) {
+    .insight-row, .doc-grid, .proj-grid { grid-template-columns: 1fr; }
+    .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 40px 24px; }
+    .hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">Campanha CRM · SMB · Retenção + Educação</div>
+    <h1>Aprenda tudo que você<br>pode fazer <span>com a Qive</span></h1>
+    <p class="hero-sub">Três ondas de educação contínua para a base SMB ativa, usando demos interativas como âncora e a Reforma Tributária como acelerador de urgência. Documentos, Pagamentos e Fornecedores, em um fluxo só.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Período</span>
+        <span class="hero-meta-value">22 de Junho a 31 de Julho de 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Canais</span>
+        <span class="hero-meta-value">E-mail · WhatsApp · InApp Post · InApp Chat</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Objetivo</span>
+        <span class="hero-meta-value">Educação e ativação de features</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Âncora</span>
+        <span class="hero-meta-value">Demos interativas das 3 frentes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- DOCUMENTAÇÃO GERAL -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Documentação da Campanha</h2></div>
+  <h3>Visão geral estratégica</h3>
+  <div class="doc-grid">
+    <div class="doc-item">
+      <div class="doc-item-label">Objetivo principal</div>
+      <div class="doc-item-value">Educação contínua de clientes ativos para aumentar o uso das features, fortalecer a percepção de valor e reduzir solicitações de cancelamento. Objetivo secundário: preparar a base para futuras expansões.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Público atingido</div>
+      <div class="doc-item-value">Clientes SMB ativos nos clusters Expansão Estagnados, Retenção Desgaste Econômico, Retenção Uso Crítico, Retenção Sensibilidade de Preço e Retenção Desenvolvimento de Valor. Onda 2 com segmentação obrigatória por situação do AddOn GdP (Grupo A com AddOn / Grupo B sem AddOn).</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Canais utilizados</div>
+      <div class="doc-item-value small">E-mail · WhatsApp · InApp Post · InApp Chat. Mínimo de 1 comunicação por canal por frente. A demo interativa é o CTA central de todas as peças. Conteúdo educativo incorporado no próprio e-mail e nos posts InApp, sem páginas externas.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Duração</div>
+      <div class="doc-item-value">6 semanas (22/06 a 31/07/2026), em 3 ondas sequenciais de 2 semanas. Sem disparos em finais de semana. Feriado de 09/07 (Revolução Constitucionalista, SP) bloqueado por segurança.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">Temática principal</div>
+      <div class="doc-item-value">Você usa a Qive, mas talvez não use toda a Qive. Cada onda abre uma frente da plataforma e mostra, na prática, o que dá para fazer. A Reforma Tributária ancora a urgência nas frentes de Documentos e Fornecedores.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-label">KPIs de sucesso</div>
+      <div class="doc-item-value small">Primários: taxa de cliques no CTA da demo por onda · taxa de conclusão da demo · redução de solicitações de cancelamento nos clusters atingidos. Secundário: oportunidades de expansão criadas (foco Onda 2, AddOn GdP). Metas numéricas a definir com Atendimento e Expansão.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px; border-left:3px solid var(--orange);">
+    <p style="color:var(--dark); font-size:13px;"><strong>Posicionamento:</strong> a Qive não abandonou o Fiscal. O centro da campanha é a Gestão de Pagamentos, o cockpit que conecta documentos fiscais, boletos e comprovantes em um fluxo único de Contas a Pagar. Documentos e Fornecedores orbitam esse centro e completam a operação de ponta a ponta. Tom consultivo, direto, sem alarmismo: campanha de parceria, não de pressão.</p>
+  </div>
+</div>
+
+<!-- INSIGHTS DE CAMPANHAS ANTERIORES -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Insights das Campanhas Anteriores</h2></div>
+  <h3>O que funciona e o que evitar</h3>
+  <p>Leitura dos resultados históricos de campanhas CRM SMB (planilha de Resultados de campanhas CRM). As decisões desta estratégia partem desses números.</p>
+
+  <div class="insight-row" style="margin-top: 20px;">
+    <div class="insight good">
+      <div class="insight-label">✓ Assunto de e-mail técnico e específico abre mais</div>
+      <p>Os melhores assuntos foram concretos: "o erro no ERP às vezes começa na nota" (29,30%), "Uma dica simples para quem usa TOTVS no financeiro" (29,54%), "automatizar isso no TOTVS pode ser mais simples do que parece" (28,89%) e "Como começar bem com a Gestão de Pagamentos" (25,89%). Especificidade vence generalidade.</p>
+    </div>
+    <div class="insight good">
+      <div class="insight-label">✓ WhatsApp com CTA de ação em 1ª pessoa converte</div>
+      <p>Os CTAs de melhor clique foram "Sim, por favor" (3,33%), "Quero saber mais" (2,69%) e "Quero conhecer" (2,39%). Verbo de ação na primeira pessoa é o padrão vencedor. Botões de resposta rápida ao final são obrigatórios.</p>
+    </div>
+  </div>
+  <div class="insight-row">
+    <div class="insight good">
+      <div class="insight-label">✓ InApp Chat gera muito mais resposta que o Post</div>
+      <p>O InApp Chat registrou abertura de 53% a 68% e resposta de 1,06% a 1,61%. O InApp Post ficou em 17% a 25% de abertura e resposta menor. Para o momento de maior intenção (convite para a demo), o Chat é o formato a priorizar.</p>
+    </div>
+    <div class="insight good">
+      <div class="insight-label">✓ Sequência de e-mails bem cadenciada não cansa a base</div>
+      <p>Na campanha TOTVS, os e-mails 1 a 4 mantiveram abertura entre 27,49% e 29,54%, sem queda brusca. A sequência funciona quando os assuntos evoluem em narrativa em vez de repetir o mesmo argumento.</p>
+    </div>
+  </div>
+  <div class="insight-row">
+    <div class="insight bad">
+      <div class="insight-label">✗ Assunto genérico de evento/webinar abre pouco</div>
+      <p>Os convites genéricos de webinar ("[Convite] Webinar sobre gestão de pagamentos", "Participe do webinar e ganhe um presente") ficaram em 13% a 19% de abertura, abaixo da média. Esta campanha evita o gancho de evento e usa o gancho da feature concreta e da demo.</p>
+    </div>
+    <div class="insight bad">
+      <div class="insight-label">✗ WhatsApp sem rastreio é gasto sem aprendizado</div>
+      <p>Vários disparos da campanha trial GdP marcaram "sem rastreio" no clique, impossibilitando medir retorno. Todos os links de WhatsApp e demo desta campanha devem ter UTM e link rastreado, sem exceção.</p>
+    </div>
+  </div>
+  <div class="insight-row">
+    <div class="insight bad">
+      <div class="insight-label">✗ Base muito pequena distorce a métrica</div>
+      <p>E-mails enviados para 5 a 7 contatos (campanha de faturamento, e-mails 2a/2b) geraram taxas irrelevantes ou zeradas. Cada disparo precisa atingir uma base mínima representativa por cluster para gerar sinal confiável.</p>
+    </div>
+    <div class="insight good">
+      <div class="insight-label">✓ Visualização completa no Chat supera o snippet</div>
+      <p>Na campanha pós-Panorama, o Chat com mensagem completa abriu 53,78% contra 17,25% do snippet. Configurar o InApp Chat para exibir a mensagem completa é uma alavanca direta de engajamento.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CALENDÁRIO -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Calendário de Disparos</h2></div>
+  <h3>Junho e Julho 2026 — visão semanal</h3>
+  <p>Nenhum disparo em finais de semana. <strong>09/07 (quinta)</strong> está bloqueado por ser feriado estadual de SP (Revolução Constitucionalista). Não há feriado nacional no período. Três ondas sequenciais de 2 semanas: cada onda cobre os 4 canais com a demo da frente como CTA central.</p>
+
+  <div style="margin-top: 24px;">
+
+    <!-- SEMANA 1 -->
+    <div class="week-header">
+      <span class="week-num">Semana 1</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Onda 1 · Gestão de Documentos — abertura com a Reforma</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Seg</div><div class="cal-date">22</div>
+        <span class="cal-tag tag-email">E-mail 1</span>
+        <span class="cal-tag tag-chat">InApp Chat 1</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Ter</div><div class="cal-date">23</div>
+        <span class="cal-tag tag-wpp">WhatsApp 1</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Qua</div><div class="cal-date">24</div>
+        <span class="cal-tag tag-inapp">InApp Post 1</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qui</div><div class="cal-date">25</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sex</div><div class="cal-date">26</div>
+        <span class="cal-tag tag-off">Sem disparo</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 2 -->
+    <div class="week-header">
+      <span class="week-num">Semana 2</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Onda 1 · Gestão de Documentos — aprofundamento</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day">
+        <div class="cal-weekday">Seg</div><div class="cal-date">29</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Ter</div><div class="cal-date">30</div>
+        <span class="cal-tag tag-email">E-mail 2</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qua</div><div class="cal-date">01/07</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qui</div><div class="cal-date">02</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sex</div><div class="cal-date">03</div>
+        <span class="cal-tag tag-off">Sem disparo</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 3 -->
+    <div class="week-header">
+      <span class="week-num">Semana 3</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Onda 2 · Gestão de Pagamentos — segmentada A/B</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Seg</div><div class="cal-date">06</div>
+        <span class="cal-tag tag-email">E-mail 3 (A/B)</span>
+        <span class="cal-tag tag-chat">InApp Chat 2</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Ter</div><div class="cal-date">07</div>
+        <span class="cal-tag tag-wpp">WhatsApp 2 (A/B)</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Qua</div><div class="cal-date">08</div>
+        <span class="cal-tag tag-inapp">InApp Post 2 (A/B)</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Qui</div><div class="cal-date">09</div>
+        <span class="cal-tag tag-off">Feriado SP</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sex</div><div class="cal-date">10</div>
+        <span class="cal-tag tag-off">Sem disparo</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 4 -->
+    <div class="week-header">
+      <span class="week-num">Semana 4</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Onda 2 · Gestão de Pagamentos — reforço A/B</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Seg</div><div class="cal-date">13</div>
+        <span class="cal-tag tag-email">E-mail 4 (A/B)</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Ter</div><div class="cal-date">14</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qua</div><div class="cal-date">15</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qui</div><div class="cal-date">16</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sex</div><div class="cal-date">17</div>
+        <span class="cal-tag tag-off">Sem disparo</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 5 -->
+    <div class="week-header">
+      <span class="week-num">Semana 5</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Onda 3 · Gestão de Fornecedores — abertura com a Reforma</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Seg</div><div class="cal-date">20</div>
+        <span class="cal-tag tag-email">E-mail 5</span>
+        <span class="cal-tag tag-chat">InApp Chat 3</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Ter</div><div class="cal-date">21</div>
+        <span class="cal-tag tag-wpp">WhatsApp 3</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Qua</div><div class="cal-date">22</div>
+        <span class="cal-tag tag-inapp">InApp Post 3</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qui</div><div class="cal-date">23</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sex</div><div class="cal-date">24</div>
+        <span class="cal-tag tag-off">Sem disparo</span>
+      </div>
+    </div>
+
+    <!-- SEMANA 6 -->
+    <div class="week-header">
+      <span class="week-num">Semana 6</span>
+      <span class="week-line"></span>
+      <span class="week-theme">Onda 3 · Gestão de Fornecedores — fechamento</span>
+    </div>
+    <div class="calendar-grid">
+      <div class="cal-day">
+        <div class="cal-weekday">Seg</div><div class="cal-date">27</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day highlight">
+        <div class="cal-weekday">Ter</div><div class="cal-date">28</div>
+        <span class="cal-tag tag-email">E-mail 6</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qua</div><div class="cal-date">29</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day">
+        <div class="cal-weekday">Qui</div><div class="cal-date">30</div>
+        <span style="font-size:11px;color:var(--mid);">Sem disparo</span>
+      </div>
+      <div class="cal-day inactive">
+        <div class="cal-weekday">Sex</div><div class="cal-date">31</div>
+        <span class="cal-tag tag-off">Sem disparo</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:20px;">
+    <p style="color:var(--dark); font-size:13px;"><strong>Resumo de peças:</strong> 6 e-mails, 3 WhatsApp, 3 InApp Post e 3 InApp Chat (15 disparos). Cada onda concentra o WhatsApp em um único dia (o primeiro toque da onda, que tem a melhor taxa histórica de clique). A Onda 2 mantém 1 peça por canal, mas cada peça é produzida em duas versões por segmentação obrigatória do AddOn GdP: Grupo A (com AddOn, foco em aprofundamento) e Grupo B (sem AddOn, foco em descoberta). Cada disparo traz 2 opções de copy.</p>
+  </div>
+</div>
+
+<!-- COPIES E CRIATIVOS -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Copies e Criativos por Disparo</h2></div>
+
+  <!-- ============ ONDA 1 ============ -->
+  <div class="onda-banner o1">
+    <div class="onda-tag">Onda 1 · Semanas 1 e 2 · 22/06 a 03/07</div>
+    <h4>Gestão de Documentos</h4>
+    <p>A base do controle fiscal e o ponto de partida para tudo que a Reforma Tributária vai exigir. Gancho de Reforma. Âncora: demo interativa de Gestão de Documentos.</p>
+  </div>
+
+  <!-- E-MAIL 1 -->
+  <div class="week-header" style="margin-top:24px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 1 · 22/06 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Abertura · gancho de Reforma + demo</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 1 de 6</div>
+        <div class="disparo-date">Segunda-feira, 22 de Junho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Objetivo: abrir a frente de Documentos com a Reforma e levar para a demo interativa</div>
+      <div class="disparo-sub">Tom consultivo e específico. Conteúdo educativo dentro do corpo. CTA central: demo de Gestão de Documentos.</div>
+
+      <div class="copy-label">Opção A — abordagem direta e técnica</div>
+      <div class="copy-box" data-copy="Assunto: a Reforma já mudou seu fiscal. E a sua captura de notas?
+Linha prévia: NFe, NFSe e CTe direto da Sefaz
+
+Oi, [Nome].
+
+A Reforma Tributária já começou a mexer com a rotina fiscal das empresas. Mais obrigações, novos formatos de documento e uma cobrança maior por rastreabilidade.
+
+Você já usa a Qive. Mas talvez ainda não use a captura no automático, que é exatamente o que tira peso do seu time agora.
+
+Dentro da Gestão de Documentos, nós fazemos:
+- Captura automática de NFe, NFSe e CTe direto da Sefaz
+- 100% de cobertura das prefeituras para consulta de NFSe
+- Manifestação e conciliação automáticas
+- Dashboards e relatórios avançados em nuvem
+- Automação de rotinas com etiquetas e filtros
+
+Em vez de explicar, preferimos te mostrar. Montamos uma demo interativa para você navegar no seu ritmo e ver como cada etapa funciona.
+
+CTA: Explorar a demo de Gestão de Documentos
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-meta"><b>Assunto:</b> a Reforma já mudou seu fiscal. E a captura? <span style="color:var(--mid);">(48)</span> · <b>Prévia:</b> NFe, NFSe e CTe da Sefaz <span style="color:var(--mid);">(25)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+A Reforma Tributária já começou a mexer com a rotina fiscal das empresas. Mais obrigações, novos formatos de documento e uma cobrança maior por rastreabilidade.
+
+Você já usa a Qive. Mas talvez ainda não use a captura no automático, que é exatamente o que tira peso do seu time agora.
+
+Dentro da Gestão de Documentos, nós fazemos:
+→ Captura automática de NFe, NFSe e CTe direto da Sefaz
+→ 100% de cobertura das prefeituras para consulta de NFSe
+→ Manifestação e conciliação automáticas
+→ Dashboards e relatórios avançados em nuvem
+→ Automação de rotinas com etiquetas e filtros
+
+Em vez de explicar, preferimos te mostrar. Montamos uma demo interativa para você navegar no seu ritmo e ver como cada etapa funciona.
+
+[CTA] Explorar a demo de Gestão de Documentos →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — abordagem narrativa e consultiva</div>
+      <div class="copy-box" data-copy="Assunto: quanto tempo seu time gasta caçando uma nota?
+Linha prévia: tem um jeito mais simples
+
+Oi, [Nome].
+
+Tem uma cena que se repete em quase todo time fiscal: alguém procurando uma nota específica no meio de centenas de documentos, perto do fechamento.
+
+Com a Reforma Tributária, esse tipo de busca vai acontecer com mais frequência, e a margem para erro fica menor.
+
+A boa notícia é que essa parte já está resolvida dentro da Qive. Na Gestão de Documentos, a captura vem automática da Sefaz, a conciliação roda sozinha e os relatórios mostram cada documento organizado do jeito que o seu processo pede.
+
+Preparamos uma demo interativa para você ver isso funcionando, sem precisar configurar nada agora.
+
+CTA: Ver a demo de Gestão de Documentos
+
+Até logo,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-meta"><b>Assunto:</b> quanto tempo seu time gasta caçando uma nota? <span style="color:var(--mid);">(49)</span> · <b>Prévia:</b> tem um jeito mais simples <span style="color:var(--mid);">(25)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Tem uma cena que se repete em quase todo time fiscal: alguém procurando uma nota específica no meio de centenas de documentos, perto do fechamento.
+
+Com a Reforma Tributária, esse tipo de busca vai acontecer com mais frequência, e a margem para erro fica menor.
+
+A boa notícia é que essa parte já está resolvida dentro da Qive. Na Gestão de Documentos, a captura vem automática da Sefaz, a conciliação roda sozinha e os relatórios mostram cada documento organizado do jeito que o seu processo pede.
+
+Preparamos uma demo interativa para você ver isso funcionando, sem precisar configurar nada agora.
+
+[CTA] Ver a demo de Gestão de Documentos →
+
+Até logo,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header de e-mail</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 300 px (header padrão de e-mail)</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 400 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite escuro da paleta Qive. À esquerda, ícone estilizado de documento fiscal com uma seta circular indicando captura automática. Texto em destaque laranja: "Gestão de Documentos". Subtítulo branco menor: "Captura automática direto da Sefaz". Logo Qive no canto direito. Sem stock photo.</td></tr>
+          <tr><td>Estilo</td><td>Institucional e técnico, identidade Qive (laranja + grafite), tipografia pesada no título.</td></tr>
+        </table>
+      </div>
+
+      <div class="briefing body-brief">
+        <div class="briefing-label">Criativos para o corpo do e-mail</div>
+        <div class="brief-asset">
+          <div class="ba-name">1. GIF demonstrativo da captura automática</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 340 px · <b>Formato:</b> GIF animado, máximo 2 MB, loop suave de 4 a 6s · <b>Descrição:</b> tela da Qive mostrando uma NFe entrando sozinha na lista de documentos, com selo "capturado da Sefaz" surgindo. Sem áudio. Posicionar logo após o primeiro parágrafo.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">2. Ícones de lista (bullets de features)</div>
+          <div class="ba-spec"><b>Tamanho:</b> 48 × 48 px cada · <b>Formato:</b> PNG com fundo transparente · <b>Descrição:</b> 5 ícones em linha fina laranja para os itens da lista (captura, prefeituras, manifestação, dashboards, automação). Estilo outline consistente, alinhados à esquerda de cada bullet.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">3. Botão de CTA</div>
+          <div class="ba-spec"><b>Tamanho:</b> 320 × 56 px · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> botão laranja sólido, texto branco "Explorar a demo de Documentos", cantos arredondados 8px. Link rastreado com UTM para a demo de Documentos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP CHAT 1 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--purple-light);color:var(--purple);">InApp Chat 1 · 22/06 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Abertura proativa dentro da plataforma</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Chat 1 de 3</div>
+        <div class="disparo-date">Segunda-feira, 22 de Junho — disparo via plataforma</div>
+      </div>
+      <span class="disparo-canal canal-chat">InApp Chat</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Abordagem "você sabia que dá para..." Configurar para exibir a mensagem completa (visualização full bate 53% a 68% de abertura). Tom de conversa.</div>
+
+      <div class="copy-label">Opção A — convite curioso</div>
+      <div class="copy-box" data-copy="Oi, [Nome]! Com a Reforma Tributária avançando, muita gente nos pergunta como deixar a captura de notas no automático. Você sabia que dá para puxar NFe, NFSe e CTe direto da Sefaz dentro da Qive, sem digitar nada? Preparamos uma demo rápida e interativa para te mostrar. Posso te enviar o acesso? 🧡
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-body">Oi, [Nome]! Com a Reforma Tributária avançando, muita gente nos pergunta como deixar a captura de notas no automático. Você sabia que dá para puxar NFe, NFSe e CTe direto da Sefaz dentro da Qive, sem digitar nada? Preparamos uma demo rápida e interativa para te mostrar. Posso te enviar o acesso? 🧡</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — foco em prefeituras</div>
+      <div class="copy-box" data-copy="Oi, [Nome]. Uma dor comum em NFSe é a captura por prefeitura, que muda de cidade para cidade. Dentro da Qive, temos 100% de cobertura das prefeituras para essa consulta. Quer ver na prática como isso funciona? Montamos uma demo interativa de Gestão de Documentos para você navegar no seu ritmo.
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-body">Oi, [Nome]. Uma dor comum em NFSe é a captura por prefeitura, que muda de cidade para cidade. Dentro da Qive, temos 100% de cobertura das prefeituras para essa consulta. Quer ver na prática como isso funciona? Montamos uma demo interativa de Gestão de Documentos para você navegar no seu ritmo.</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP 1 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--green-light);color:var(--green);">WhatsApp 1 · 23/06 (Ter)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reforço pós e-mail · CTA direto para a demo</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">WhatsApp 1 de 3</div>
+        <div class="disparo-date">Terça-feira, 23 de Junho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-wpp">WhatsApp</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Curto e direto. Sem "oi, tudo bem". Link rastreado (UTM obrigatório). Sem variável. Finalizar com botões de resposta rápida.</div>
+
+      <div class="copy-label">Opção A — CTA "Quero ver a demo"</div>
+      <div class="copy-box" data-copy="A Reforma Tributária está mudando o que se espera da gestão fiscal. A captura automática de NFe, NFSe e CTe direto da Sefaz já está dentro da Qive, pronta para usar.
+
+Montamos uma demo interativa para você ver como funciona em poucos minutos.
+
+[Botão 1] Quero ver a demo
+[Botão 2] Falar com o time
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-body">A Reforma Tributária está mudando o que se espera da gestão fiscal. A captura automática de NFe, NFSe e CTe direto da Sefaz já está dentro da Qive, pronta para usar.
+
+Montamos uma demo interativa para você ver como funciona em poucos minutos.
+
+🟢 *Quero ver a demo*
+🟢 *Falar com o time*</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — CTA "Quero conhecer"</div>
+      <div class="copy-box" data-copy="Caçar nota perto do fechamento não precisa fazer parte da sua rotina. Na Qive, a captura de documentos vem automática da Sefaz e a busca acha qualquer NFe em segundos.
+
+Quer ver isso na prática? Preparamos uma demo interativa.
+
+[Botão 1] Quero conhecer
+[Botão 2] Agora não
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-body">Caçar nota perto do fechamento não precisa fazer parte da sua rotina. Na Qive, a captura de documentos vem automática da Sefaz e a busca acha qualquer NFe em segundos.
+
+Quer ver isso na prática? Preparamos uma demo interativa.
+
+🟢 *Quero conhecer*
+🟢 *Agora não*</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP POST 1 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Post 1 · 24/06 (Qua)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Post resumido · novidade de prazo de NFe</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Post 1 de 3</div>
+        <div class="disparo-date">Quarta-feira, 24 de Junho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Post</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Versão resumida do e-mail. Permite bullets e formatação. CTA por botão para a demo. Destaque para a novidade de prazo de NFe (90 dias).</div>
+
+      <div class="copy-label">Opção A — bullets de valor</div>
+      <div class="copy-box" data-copy="A Reforma chegou. Sua captura de notas acompanha?
+
+Dentro da Gestão de Documentos da Qive, você tem:
+- Captura automática de NFe, NFSe e CTe direto da Sefaz
+- 100% de cobertura das prefeituras para NFSe
+- Manifestação e conciliação automáticas
+- Relatórios avançados em nuvem
+
+Lembrando: o prazo de manifestação de NFe é de 90 dias. Com a manifestação automática, você não perde esse controle.
+
+[Botão] Explorar a demo de Documentos
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-body"><b>A Reforma chegou. Sua captura de notas acompanha?</b>
+
+Dentro da Gestão de Documentos da Qive, você tem:
+✓ Captura automática de NFe, NFSe e CTe direto da Sefaz
+✓ 100% de cobertura das prefeituras para NFSe
+✓ Manifestação e conciliação automáticas
+✓ Relatórios avançados em nuvem
+
+Lembrando: o prazo de manifestação de NFe é de 90 dias. Com a manifestação automática, você não perde esse controle.
+
+[Botão] Explorar a demo de Documentos →</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — pergunta direta</div>
+      <div class="copy-box" data-copy="Você captura suas notas ou ainda digita uma por uma?
+
+Na Gestão de Documentos da Qive, a captura vem automática da Sefaz, a conciliação roda sozinha e a busca encontra qualquer documento em segundos.
+
+Com a Reforma Tributária, ter isso organizado deixou de ser conforto e virou necessidade.
+
+Preparamos uma demo interativa para você navegar no seu ritmo.
+
+[Botão] Ver a demo de Documentos
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-body"><b>Você captura suas notas ou ainda digita uma por uma?</b>
+
+Na Gestão de Documentos da Qive, a captura vem automática da Sefaz, a conciliação roda sozinha e a busca encontra qualquer documento em segundos.
+
+Com a Reforma Tributária, ter isso organizado deixou de ser conforto e virou necessidade.
+
+Preparamos uma demo interativa para você navegar no seu ritmo.
+
+[Botão] Ver a demo de Documentos →</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-MAIL 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 2 · 30/06 (Ter)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Aprofundamento · automação e relatórios</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 2 de 6</div>
+        <div class="disparo-date">Terça-feira, 30 de Junho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Segundo toque da onda. Evoluir a narrativa: do "captura automática" para "o que você faz com os dados". Mostrar o como.</div>
+
+      <div class="copy-label">Opção A — foco em automação de rotinas</div>
+      <div class="copy-box" data-copy="Assunto: a rotina fiscal que roda sozinha enquanto você decide
+Linha prévia: etiquetas e filtros no automático
+
+Oi, [Nome].
+
+Capturar a nota é o começo. O ganho real aparece quando o que vinha depois também deixa de ser manual.
+
+Na Gestão de Documentos, você cria etiquetas e filtros que organizam os documentos com a lógica do seu negócio, não a do sistema. As rotinas repetitivas passam a rodar sozinhas, e os relatórios avançados mostram tudo em um painel único.
+
+Com a Reforma Tributária pedindo mais rastreabilidade, essa automação é o que mantém o time no estratégico em vez do operacional.
+
+Na demo interativa, você vê como configurar isso passo a passo.
+
+CTA: Ver a automação na demo
+
+Abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-meta"><b>Assunto:</b> a rotina fiscal que roda sozinha enquanto você decide <span style="color:var(--mid);">(49)</span> · <b>Prévia:</b> etiquetas e filtros no automático <span style="color:var(--mid);">(30)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Capturar a nota é o começo. O ganho real aparece quando o que vinha depois também deixa de ser manual.
+
+Na Gestão de Documentos, você cria etiquetas e filtros que organizam os documentos com a lógica do seu negócio, não a do sistema. As rotinas repetitivas passam a rodar sozinhas, e os relatórios avançados mostram tudo em um painel único.
+
+Com a Reforma Tributária pedindo mais rastreabilidade, essa automação é o que mantém o time no estratégico em vez do operacional.
+
+Na demo interativa, você vê como configurar isso passo a passo.
+
+[CTA] Ver a automação na demo →
+
+Abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — foco em relatórios e auditoria</div>
+      <div class="copy-box" data-copy="Assunto: o relatório que responde a Receita em segundos
+Linha prévia: seus dados fiscais, prontos
+
+Oi, [Nome].
+
+Tem uma pergunta que a Reforma Tributária vai tornar comum: você consegue rastrear essa operação com precisão?
+
+Na Gestão de Documentos da Qive, a resposta é sim. Os relatórios avançados em nuvem cruzam suas notas por período, fornecedor e tipo de operação, e a biblioteca digital guarda tudo com alta volumetria e segurança.
+
+É o tipo de controle que transforma o fechamento e a auditoria de um sufoco em uma consulta rápida.
+
+Preparamos uma demo interativa para você ver os relatórios funcionando com dados de exemplo.
+
+CTA: Conhecer os relatórios na demo
+
+Até mais,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-meta"><b>Assunto:</b> o relatório que responde a Receita em segundos <span style="color:var(--mid);">(46)</span> · <b>Prévia:</b> seus dados fiscais, prontos <span style="color:var(--mid);">(26)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Tem uma pergunta que a Reforma Tributária vai tornar comum: você consegue rastrear essa operação com precisão?
+
+Na Gestão de Documentos da Qive, a resposta é sim. Os relatórios avançados em nuvem cruzam suas notas por período, fornecedor e tipo de operação, e a biblioteca digital guarda tudo com alta volumetria e segurança.
+
+É o tipo de controle que transforma o fechamento e a auditoria de um sufoco em uma consulta rápida.
+
+Preparamos uma demo interativa para você ver os relatórios funcionando com dados de exemplo.
+
+[CTA] Conhecer os relatórios na demo →
+
+Até mais,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header de e-mail</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 300 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 400 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite. À esquerda, ícone de engrenagem ligada a um documento, simbolizando rotina automática. Texto laranja: "Documentos no automático". Subtítulo branco: "Etiquetas, filtros e relatórios". Logo Qive no canto. Sem stock photo.</td></tr>
+          <tr><td>Estilo</td><td>Técnico e limpo, foco em automação. Identidade Qive.</td></tr>
+        </table>
+      </div>
+
+      <div class="briefing body-brief">
+        <div class="briefing-label">Criativos para o corpo do e-mail</div>
+        <div class="brief-asset">
+          <div class="ba-name">1. Print anotado do painel de relatórios</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 360 px · <b>Formato:</b> PNG, máximo 500 KB · <b>Descrição:</b> captura real do painel de relatórios avançados da Qive, com 2 ou 3 destaques em laranja apontando filtro por período, por fornecedor e exportação. Dados fictícios. Inserir após o parágrafo sobre relatórios.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">2. Mini infográfico "antes e depois" da automação</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 220 px · <b>Formato:</b> PNG ou SVG · <b>Descrição:</b> duas colunas, "manual" (pilha de papéis, relógio) versus "automático na Qive" (fluxo limpo com etiquetas). Paleta grafite e laranja, ícones outline.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">3. Botão de CTA</div>
+          <div class="ba-spec"><b>Tamanho:</b> 320 × 56 px · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> botão laranja, texto branco "Ver a automação na demo", link rastreado para a demo de Documentos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">
+  <!-- ============ ONDA 2 ============ -->
+  <div class="onda-banner o2">
+    <div class="onda-tag">Onda 2 · Semanas 3 e 4 · 06/07 a 17/07</div>
+    <h4>Gestão de Pagamentos</h4>
+    <p>O centro da campanha: o Contas a Pagar de ponta a ponta, de um boleto à confirmação, em um cockpit único conectado ao fiscal. Segmentação obrigatória: Grupo A (com AddOn GdP, aprofundamento) e Grupo B (sem AddOn GdP, descoberta). Sem gancho de Reforma nesta onda.</p>
+  </div>
+
+  <!-- E-MAIL 3 -->
+  <div class="week-header" style="margin-top:24px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 3 · 06/07 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Abertura da frente · segmentado A/B</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 3 de 6 · Grupo A (com AddOn GdP)</div>
+        <div class="disparo-date">Segunda-feira, 06 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Grupo A · aprofundamento de uso</div>
+      <div class="disparo-sub">Quem já tem o AddOn GdP. Foco em ativar features ainda não exploradas, não em vender. CTA: demo de Gestão de Pagamentos.</div>
+
+      <div class="copy-label">Opção A — foco em 3-way matching</div>
+      <div class="copy-box" data-copy="Assunto: você já usa o pagamento. E o 3-way matching?
+Linha prévia: nota, boleto e comprovante
+
+Oi, [Nome].
+
+Você já tem a Gestão de Pagamentos na Qive, o que significa que a parte difícil já está resolvida. A pergunta agora é se você está usando tudo que ela faz.
+
+Um exemplo que muita gente ainda não ativou: o 3-way matching. Ele cruza nota, boleto e comprovante automaticamente e aponta qualquer divergência antes do pagamento sair. É a sua melhor defesa contra fraude e pagamento errado.
+
+Na demo interativa, você vê o matching funcionando e como ativar no seu fluxo.
+
+CTA: Ver o 3-way matching na demo
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> você já usa o pagamento. E o 3-way matching? <span style="color:var(--mid);">(48)</span> · <b>Prévia:</b> nota, boleto e comprovante <span style="color:var(--mid);">(27)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Você já tem a Gestão de Pagamentos na Qive, o que significa que a parte difícil já está resolvida. A pergunta agora é se você está usando tudo que ela faz.
+
+Um exemplo que muita gente ainda não ativou: o 3-way matching. Ele cruza nota, boleto e comprovante automaticamente e aponta qualquer divergência antes do pagamento sair. É a sua melhor defesa contra fraude e pagamento errado.
+
+Na demo interativa, você vê o matching funcionando e como ativar no seu fluxo.
+
+[CTA] Ver o 3-way matching na demo →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — foco em alertas e aprovações</div>
+      <div class="copy-box" data-copy="Assunto: três features do seu pagamento que talvez estejam paradas
+Linha prévia: dá para usar mais
+
+Oi, [Nome].
+
+Você já contratou a Gestão de Pagamentos. Então vamos direto ao ponto: tem recurso seu que provavelmente está ocioso.
+
+- Alertas de divergência que avisam antes do pagamento sair
+- Fluxo de aprovações em lote, que tira o gargalo do "esperando aprovar"
+- Visão unificada com histórico completo de cada pagamento
+
+São coisas que você já paga e que mudam o dia a dia do time financeiro quando ligadas.
+
+Preparamos uma demo interativa mostrando cada uma delas em ação.
+
+CTA: Ativar essas features na demo
+
+Abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> três features do seu pagamento que estão paradas <span style="color:var(--mid);">(50)</span> · <b>Prévia:</b> dá para usar mais <span style="color:var(--mid);">(17)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Você já contratou a Gestão de Pagamentos. Então vamos direto ao ponto: tem recurso seu que provavelmente está ocioso.
+
+→ Alertas de divergência que avisam antes do pagamento sair
+→ Fluxo de aprovações em lote, que tira o gargalo do "esperando aprovar"
+→ Visão unificada com histórico completo de cada pagamento
+
+São coisas que você já paga e que mudam o dia a dia do time financeiro quando ligadas.
+
+Preparamos uma demo interativa mostrando cada uma delas em ação.
+
+[CTA] Ativar essas features na demo →
+
+Abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 3 de 6 · Grupo B (sem AddOn GdP)</div>
+        <div class="disparo-date">Segunda-feira, 06 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Grupo B · descoberta e demonstração de valor</div>
+      <div class="disparo-sub">Quem ainda não tem o AddOn GdP. Apresentar a oportunidade e levar para a demo. Conectar com o que já usam (documentos).</div>
+
+      <div class="copy-label">Opção A — fechar o ciclo</div>
+      <div class="copy-box" data-copy="Assunto: você já organiza as notas. Falta fechar o pagamento
+Linha prévia: o ciclo completo em um lugar
+
+Oi, [Nome].
+
+Você já usa a Qive para organizar seus documentos fiscais. Mas hoje, provavelmente, o pagamento ainda vive em outro lugar: planilha, banco, e-mail.
+
+A Gestão de Pagamentos fecha esse ciclo. Ela conecta a nota que você já tem na Qive ao boleto e ao comprovante, em um cockpit único de Contas a Pagar. Importação automática de boletos, conciliação e visão completa de cada pagamento.
+
+É a mesma plataforma que você já conhece, fazendo a operação inteira em um lugar só.
+
+Preparamos uma demo interativa para você ver como ficaria o seu fluxo.
+
+CTA: Conhecer a Gestão de Pagamentos
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> você já organiza as notas. Falta o pagamento <span style="color:var(--mid);">(49)</span> · <b>Prévia:</b> o ciclo completo num lugar <span style="color:var(--mid);">(27)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Você já usa a Qive para organizar seus documentos fiscais. Mas hoje, provavelmente, o pagamento ainda vive em outro lugar: planilha, banco, e-mail.
+
+A Gestão de Pagamentos fecha esse ciclo. Ela conecta a nota que você já tem na Qive ao boleto e ao comprovante, em um cockpit único de Contas a Pagar. Importação automática de boletos, conciliação e visão completa de cada pagamento.
+
+É a mesma plataforma que você já conhece, fazendo a operação inteira em um lugar só.
+
+Preparamos uma demo interativa para você ver como ficaria o seu fluxo.
+
+[CTA] Conhecer a Gestão de Pagamentos →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — risco de pagar sem controle</div>
+      <div class="copy-box" data-copy="Assunto: todo boleto que você paga tem nota correspondente?
+Linha prévia: dá para ter certeza disso
+
+Oi, [Nome].
+
+É uma pergunta simples e desconfortável: você tem certeza de que cada boleto pago tem a nota certa por trás?
+
+Quando o pagamento fica separado do fiscal, a resposta costuma ser "acho que sim". E é aí que mora o risco de pagar a mais, pagar duplicado ou cair em fraude.
+
+A Gestão de Pagamentos da Qive resolve isso cruzando nota, boleto e comprovante automaticamente, com alertas de divergência antes do dinheiro sair.
+
+Montamos uma demo interativa para você ver esse controle funcionando.
+
+CTA: Ver como funciona na demo
+
+Abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> todo boleto que você paga tem nota? <span style="color:var(--mid);">(42)</span> · <b>Prévia:</b> dá para ter certeza disso <span style="color:var(--mid);">(25)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+É uma pergunta simples e desconfortável: você tem certeza de que cada boleto pago tem a nota certa por trás?
+
+Quando o pagamento fica separado do fiscal, a resposta costuma ser "acho que sim". E é aí que mora o risco de pagar a mais, pagar duplicado ou cair em fraude.
+
+A Gestão de Pagamentos da Qive resolve isso cruzando nota, boleto e comprovante automaticamente, com alertas de divergência antes do dinheiro sair.
+
+Montamos uma demo interativa para você ver esse controle funcionando.
+
+[CTA] Ver como funciona na demo →
+
+Abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header de e-mail (vale para Grupo A e B)</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 300 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 400 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite. Representação de um cockpit: três blocos conectados por linhas (nota, boleto, comprovante) convergindo para um ícone central de "confirmado". Texto em laranja: "Gestão de Pagamentos". Subtítulo branco: "O Contas a Pagar de ponta a ponta". Logo Qive no canto.</td></tr>
+          <tr><td>Estilo</td><td>Técnico, sensação de controle e conexão. Evitar ícones genéricos de dinheiro; preferir representação de fluxo.</td></tr>
+        </table>
+      </div>
+
+      <div class="briefing body-brief">
+        <div class="briefing-label">Criativos para o corpo do e-mail (Grupo A e B)</div>
+        <div class="brief-asset">
+          <div class="ba-name">1. GIF do 3-way matching em ação</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 340 px · <b>Formato:</b> GIF animado, máximo 2 MB, loop de 5s · <b>Descrição:</b> três cartões (nota, boleto, comprovante) deslizando e se encaixando, com um selo verde "conciliado" ao final e um alerta laranja quando há divergência. Sem áudio. Após o parágrafo que explica o matching.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">2. Diagrama do cockpit de pagamentos</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 300 px · <b>Formato:</b> PNG ou SVG · <b>Descrição:</b> esquema com boleto e nota entrando à esquerda, passando por conciliação no centro e saindo como pagamento confirmado à direita. Linhas laranja sobre fundo grafite claro.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">3. Botão de CTA</div>
+          <div class="ba-spec"><b>Tamanho:</b> 320 × 56 px · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> botão laranja, texto branco. Grupo A: "Ver o 3-way matching na demo". Grupo B: "Conhecer a Gestão de Pagamentos". Link rastreado para a demo de Pagamentos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP CHAT 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--purple-light);color:var(--purple);">InApp Chat 2 · 06/07 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Pergunta de abertura sobre o fluxo de pagamentos · A/B</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Chat 2 de 3 · segmentado por grupo</div>
+        <div class="disparo-date">Segunda-feira, 06 de Julho — disparo via plataforma</div>
+      </div>
+      <span class="disparo-canal canal-chat">InApp Chat</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Abre com pergunta sobre o fluxo atual de pagamentos. Exibir mensagem completa. Opção A para Grupo A, Opção B para Grupo B.</div>
+
+      <div class="copy-label">Opção A — Grupo A (com AddOn): ativação</div>
+      <div class="copy-box" data-copy="Oi, [Nome]! Uma pergunta rápida: hoje você já usa o 3-way matching e os alertas de divergência dentro da Gestão de Pagamentos? Muita gente tem o recurso e ainda não ligou. Posso te mostrar numa demo interativa como ativar e o que muda no seu fluxo? 🧡
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-body">Oi, [Nome]! Uma pergunta rápida: hoje você já usa o 3-way matching e os alertas de divergência dentro da Gestão de Pagamentos? Muita gente tem o recurso e ainda não ligou. Posso te mostrar numa demo interativa como ativar e o que muda no seu fluxo? 🧡</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — Grupo B (sem AddOn): descoberta</div>
+      <div class="copy-box" data-copy="Oi, [Nome]. Uma pergunta rápida: como está hoje o seu fluxo de pagamentos, ainda separado das notas que você organiza aqui na Qive? Dá para juntar os dois em um cockpit só, com importação de boletos e conciliação automática. Quer ver como ficaria? Tenho uma demo interativa rápida para te enviar.
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-body">Oi, [Nome]. Uma pergunta rápida: como está hoje o seu fluxo de pagamentos, ainda separado das notas que você organiza aqui na Qive? Dá para juntar os dois em um cockpit só, com importação de boletos e conciliação automática. Quer ver como ficaria? Tenho uma demo interativa rápida para te enviar.</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--green-light);color:var(--green);">WhatsApp 2 · 07/07 (Ter)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reforço pós e-mail · A/B</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">WhatsApp 2 de 3 · segmentado por grupo</div>
+        <div class="disparo-date">Terça-feira, 07 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-wpp">WhatsApp</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Curto e direto. Link rastreado. Botões de resposta rápida. Opção A para Grupo A, Opção B para Grupo B.</div>
+
+      <div class="copy-label">Opção A — Grupo A (com AddOn): "Quero ativar"</div>
+      <div class="copy-box" data-copy="Tem recurso na sua Gestão de Pagamentos que talvez esteja parado: 3-way matching, alertas de divergência e aprovação em lote.
+
+São features que você já tem e que evitam pagamento errado. A demo interativa mostra como ligar.
+
+[Botão 1] Quero ativar
+[Botão 2] Falar com o time
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-body">Tem recurso na sua Gestão de Pagamentos que talvez esteja parado: 3-way matching, alertas de divergência e aprovação em lote.
+
+São features que você já tem e que evitam pagamento errado. A demo interativa mostra como ligar.
+
+🟢 *Quero ativar*
+🟢 *Falar com o time*</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — Grupo B (sem AddOn): "Quero conhecer"</div>
+      <div class="copy-box" data-copy="Você já organiza suas notas na Qive. Falta pouco para o pagamento entrar no mesmo lugar.
+
+A Gestão de Pagamentos junta nota, boleto e comprovante em um cockpit só. A demo interativa mostra como funciona.
+
+[Botão 1] Quero conhecer
+[Botão 2] Agora não
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-body">Você já organiza suas notas na Qive. Falta pouco para o pagamento entrar no mesmo lugar.
+
+A Gestão de Pagamentos junta nota, boleto e comprovante em um cockpit só. A demo interativa mostra como funciona.
+
+🟢 *Quero conhecer*
+🟢 *Agora não*</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP POST 2 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Post 2 · 08/07 (Qua)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Post resumido · A/B (ativação vs descoberta)</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Post 2 de 3 · segmentado por grupo</div>
+        <div class="disparo-date">Quarta-feira, 08 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Post</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Opção A para Grupo A (ativação), Opção B para Grupo B (descoberta). CTA por botão para a demo.</div>
+
+      <div class="copy-label">Opção A — Grupo A (com AddOn): ativação</div>
+      <div class="copy-box" data-copy="Sua Gestão de Pagamentos pode estar fazendo mais.
+
+Recursos que talvez você ainda não use:
+- 3-way matching: nota, boleto e comprovante cruzados automaticamente
+- Alertas de divergência antes do pagamento sair
+- Aprovação em lote, sem gargalo
+- Histórico completo de cada pagamento
+
+Tudo isso já está incluído no seu plano.
+
+[Botão] Ativar na demo de Pagamentos
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-body"><b>Sua Gestão de Pagamentos pode estar fazendo mais.</b>
+
+Recursos que talvez você ainda não use:
+✓ 3-way matching: nota, boleto e comprovante cruzados automaticamente
+✓ Alertas de divergência antes do pagamento sair
+✓ Aprovação em lote, sem gargalo
+✓ Histórico completo de cada pagamento
+
+Tudo isso já está incluído no seu plano.
+
+[Botão] Ativar na demo de Pagamentos →</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — Grupo B (sem AddOn): descoberta</div>
+      <div class="copy-box" data-copy="Você já tem suas notas na Qive. E os pagamentos?
+
+A Gestão de Pagamentos conecta nota, boleto e comprovante em um cockpit único de Contas a Pagar:
+- Importação automática de boletos
+- Conciliação fiscal e financeira
+- Alertas de divergência para evitar fraude
+- Visão unificada de tudo
+
+Veja como ficaria a sua operação completa em um lugar só.
+
+[Botão] Conhecer na demo de Pagamentos
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-body"><b>Você já tem suas notas na Qive. E os pagamentos?</b>
+
+A Gestão de Pagamentos conecta nota, boleto e comprovante em um cockpit único de Contas a Pagar:
+✓ Importação automática de boletos
+✓ Conciliação fiscal e financeira
+✓ Alertas de divergência para evitar fraude
+✓ Visão unificada de tudo
+
+Veja como ficaria a sua operação completa em um lugar só.
+
+[Botão] Conhecer na demo de Pagamentos →</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Banner InApp Post (2 versões)</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 400 px</td></tr>
+          <tr><td>Formato</td><td>PNG, máximo 500 KB</td></tr>
+          <tr><td>Descrição A (Grupo A)</td><td>Fundo grafite. Checklist visual com as 4 features (matching, alertas, aprovação, histórico) em laranja e branco. Mensagem central: "Você já tem. Falta ativar." Botão laranja "Ativar agora".</td></tr>
+          <tr><td>Descrição B (Grupo B)</td><td>Fundo laranja suave. Ícone de documento ligando-se a um ícone de boleto e a um de comprovante, convergindo em um cockpit. Texto: "Do documento ao pagamento, em um lugar só." Botão laranja escuro "Conhecer a Gestão de Pagamentos".</td></tr>
+          <tr><td>Estilo</td><td>Limpo, sensação de controle. Sem alarmismo.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-MAIL 4 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 4 · 13/07 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reforço da onda · prova de valor · A/B</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 4 de 6 · Grupo A (com AddOn GdP)</div>
+        <div class="disparo-date">Segunda-feira, 13 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Grupo A · prova de valor com dado real</div>
+      <div class="disparo-sub">Segundo toque. Usar prova concreta (99,97% dos pagamentos no prazo nos clientes Qive). Reforçar a demo.</div>
+
+      <div class="copy-label">Opção A — dado de resultado</div>
+      <div class="copy-box" data-copy="Assunto: 99,97% dos pagamentos no prazo. Como chegar lá
+Linha prévia: o que separa quem usa tudo
+
+Oi, [Nome].
+
+Entre os clientes que usam a Gestão de Pagamentos no automático, 99,97% dos pagamentos saem no prazo. Não é sorte: é matching, alerta e aprovação organizados rodando juntos.
+
+Se a sua operação ainda tem pagamento atrasado ou divergência escapando, provavelmente é uma dessas peças que ainda não está ligada.
+
+A demo interativa mostra o fluxo completo funcionando, do boleto à confirmação.
+
+CTA: Ver o fluxo completo na demo
+
+Abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> 99,97% dos pagamentos no prazo. Como chegar lá <span style="color:var(--mid);">(49)</span> · <b>Prévia:</b> o que separa quem usa tudo <span style="color:var(--mid);">(27)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Entre os clientes que usam a Gestão de Pagamentos no automático, 99,97% dos pagamentos saem no prazo. Não é sorte: é matching, alerta e aprovação organizados rodando juntos.
+
+Se a sua operação ainda tem pagamento atrasado ou divergência escapando, provavelmente é uma dessas peças que ainda não está ligada.
+
+A demo interativa mostra o fluxo completo funcionando, do boleto à confirmação.
+
+[CTA] Ver o fluxo completo na demo →
+
+Abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — antes e depois</div>
+      <div class="copy-box" data-copy="Assunto: antes do matching e depois do matching
+Linha prévia: a diferença no seu caixa
+
+Oi, [Nome].
+
+Antes do 3-way matching:
+- conferência manual de nota, boleto e comprovante
+- risco de pagar duplicado ou pagar errado
+- divergência descoberta tarde demais
+
+Depois do matching, dentro da sua Gestão de Pagamentos:
+- cruzamento automático dos três documentos
+- alerta antes do pagamento sair
+- histórico completo para auditar quando quiser
+
+Você já tem essa feature. A demo mostra como deixá-la trabalhando por você.
+
+CTA: Ativar o matching na demo
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> antes do matching e depois do matching <span style="color:var(--mid);">(40)</span> · <b>Prévia:</b> a diferença no seu caixa <span style="color:var(--mid);">(26)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Antes do 3-way matching:
+→ conferência manual de nota, boleto e comprovante
+→ risco de pagar duplicado ou pagar errado
+→ divergência descoberta tarde demais
+
+Depois do matching, dentro da sua Gestão de Pagamentos:
+→ cruzamento automático dos três documentos
+→ alerta antes do pagamento sair
+→ histórico completo para auditar quando quiser
+
+Você já tem essa feature. A demo mostra como deixá-la trabalhando por você.
+
+[CTA] Ativar o matching na demo →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 4 de 6 · Grupo B (sem AddOn GdP)</div>
+        <div class="disparo-date">Segunda-feira, 13 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Grupo B · prova de valor e oportunidade</div>
+      <div class="disparo-sub">Segundo toque. Mostrar resultado concreto e abrir conversa com Expansão. Demo como CTA primário.</div>
+
+      <div class="copy-label">Opção A — resultado que dá para ter</div>
+      <div class="copy-box" data-copy="Assunto: e se cada boleto pago já viesse conciliado?
+Linha prévia: menos conferência, menos risco
+
+Oi, [Nome].
+
+Imagina o seu fluxo de pagamento assim: o boleto entra automático, a Qive cruza com a nota que você já tem aqui, aponta divergência se houver e te mostra tudo conciliado antes de pagar.
+
+É o que a Gestão de Pagamentos faz. Entre os clientes que usam, 99,97% dos pagamentos saem no prazo.
+
+Você já tem a primeira metade na Qive: os documentos. A segunda metade é essa.
+
+Na demo interativa, você vê o ciclo completo com dados de exemplo.
+
+CTA: Ver a demo de Pagamentos
+
+Abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> e se cada boleto pago já viesse conciliado? <span style="color:var(--mid);">(44)</span> · <b>Prévia:</b> menos conferência, menos risco <span style="color:var(--mid);">(30)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Imagina o seu fluxo de pagamento assim: o boleto entra automático, a Qive cruza com a nota que você já tem aqui, aponta divergência se houver e te mostra tudo conciliado antes de pagar.
+
+É o que a Gestão de Pagamentos faz. Entre os clientes que usam, 99,97% dos pagamentos saem no prazo.
+
+Você já tem a primeira metade na Qive: os documentos. A segunda metade é essa.
+
+Na demo interativa, você vê o ciclo completo com dados de exemplo.
+
+[CTA] Ver a demo de Pagamentos →
+
+Abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — convite para conversa</div>
+      <div class="copy-box" data-copy="Assunto: vale 15 minutos para ver seu Contas a Pagar inteiro?
+Linha prévia: a gente te mostra
+
+Oi, [Nome].
+
+Você já confia na Qive para os seus documentos. Faz sentido conhecer o que falta para fechar o Contas a Pagar inteiro dentro da mesma plataforma.
+
+A Gestão de Pagamentos traz importação de boletos, conciliação automática e alertas de divergência, conectados às notas que você já tem aqui.
+
+Você pode começar pela demo interativa, no seu ritmo. E se quiser, a gente conversa sobre como ficaria no seu caso.
+
+CTA 1: Ver a demo de Pagamentos
+CTA 2: Falar com o time Qive
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-pagamentos">
+        <div class="copy-meta"><b>Assunto:</b> vale 15 min para ver seu Contas a Pagar inteiro? <span style="color:var(--mid);">(50)</span> · <b>Prévia:</b> a gente te mostra <span style="color:var(--mid);">(17)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Você já confia na Qive para os seus documentos. Faz sentido conhecer o que falta para fechar o Contas a Pagar inteiro dentro da mesma plataforma.
+
+A Gestão de Pagamentos traz importação de boletos, conciliação automática e alertas de divergência, conectados às notas que você já tem aqui.
+
+Você pode começar pela demo interativa, no seu ritmo. E se quiser, a gente conversa sobre como ficaria no seu caso.
+
+[CTA] Ver a demo de Pagamentos →
+[CTA] Falar com o time Qive →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header de e-mail (vale para Grupo A e B)</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 300 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 400 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite. Número grande em laranja "99,97%" com a frase branca ao lado "dos pagamentos no prazo". Pequeno ícone de relógio com check. Logo Qive no canto. Transmite resultado e confiança.</td></tr>
+          <tr><td>Estilo</td><td>Foco no dado. Tipografia forte no número. Sem poluição visual.</td></tr>
+        </table>
+      </div>
+
+      <div class="briefing body-brief">
+        <div class="briefing-label">Criativos para o corpo do e-mail (Grupo A e B)</div>
+        <div class="brief-asset">
+          <div class="ba-name">1. Card de destaque do indicador</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 200 px · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> card grafite com "99,97% dos pagamentos no prazo" em laranja e uma linha de apoio "entre clientes que usam a Gestão de Pagamentos no automático". Posicionar logo no topo do corpo.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">2. Comparativo visual "antes e depois do matching"</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 280 px · <b>Formato:</b> PNG ou SVG · <b>Descrição:</b> duas colunas. Antes: conferência manual, ícones de risco em cinza. Depois: cruzamento automático, alerta e histórico, ícones em laranja e verde. Usar para o Grupo A; no Grupo B, trocar o título para "fluxo separado versus fluxo unificado".</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">3. Botão de CTA</div>
+          <div class="ba-spec"><b>Tamanho:</b> 320 × 56 px · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> botão laranja, texto branco. Grupo A: "Ver o fluxo completo na demo". Grupo B: "Ver a demo de Pagamentos". Link rastreado para a demo de Pagamentos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">
+  <!-- ============ ONDA 3 ============ -->
+  <div class="onda-banner o3">
+    <div class="onda-tag">Onda 3 · Semanas 5 e 6 · 20/07 a 31/07</div>
+    <h4>Gestão de Fornecedores</h4>
+    <p>Rastreabilidade total da cadeia, da emissão da nota à confirmação de pagamento, para você e para o fornecedor. Gancho de Reforma: mais rastreabilidade exigida. Âncora: demo interativa do Portal de Fornecedores.</p>
+  </div>
+
+  <!-- E-MAIL 5 -->
+  <div class="week-header" style="margin-top:24px;">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 5 · 20/07 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Abertura da frente · gancho de Reforma + demo</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 5 de 6</div>
+        <div class="disparo-date">Segunda-feira, 20 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-title">Objetivo: abrir a frente de Fornecedores com a Reforma e levar para a demo do portal</div>
+      <div class="disparo-sub">Tom consultivo. Conteúdo educativo no corpo. CTA central: demo do Portal de Fornecedores.</div>
+
+      <div class="copy-label">Opção A — dor da rastreabilidade</div>
+      <div class="copy-box" data-copy="Assunto: seu fornecedor sabe onde está a nota dele?
+Linha prévia: vocês dois, na mesma página
+
+Oi, [Nome].
+
+A Reforma Tributária aumenta a cobrança por rastreabilidade de ponta a ponta. E boa parte do retrabalho com fornecedor nasce de uma pergunta simples: cadê a nota, e em que pé está o pagamento?
+
+Na Gestão de Fornecedores da Qive, isso fica visível para os dois lados. O fornecedor acompanha pela linha do tempo, da emissão da nota à confirmação do pagamento, e a comunicação para de viver no e-mail solto.
+
+O resultado é menos cobrança, menos ruído e uma cadeia que você consegue auditar.
+
+Montamos uma demo interativa do portal para você navegar no seu ritmo.
+
+CTA: Explorar a demo do Portal de Fornecedores
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-meta"><b>Assunto:</b> seu fornecedor sabe onde está a nota dele? <span style="color:var(--mid);">(44)</span> · <b>Prévia:</b> vocês dois, na mesma página <span style="color:var(--mid);">(27)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+A Reforma Tributária aumenta a cobrança por rastreabilidade de ponta a ponta. E boa parte do retrabalho com fornecedor nasce de uma pergunta simples: cadê a nota, e em que pé está o pagamento?
+
+Na Gestão de Fornecedores da Qive, isso fica visível para os dois lados. O fornecedor acompanha pela linha do tempo, da emissão da nota à confirmação do pagamento, e a comunicação para de viver no e-mail solto.
+
+O resultado é menos cobrança, menos ruído e uma cadeia que você consegue auditar.
+
+Montamos uma demo interativa do portal para você navegar no seu ritmo.
+
+[CTA] Explorar a demo do Portal de Fornecedores →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — autoatendimento e ERP</div>
+      <div class="copy-box" data-copy="Assunto: quantos e-mails você troca para receber uma nota?
+Linha prévia: tem um jeito melhor
+
+Oi, [Nome].
+
+Receber documento de fornecedor costuma ser uma novela: pede a nota, cobra de novo, confere na mão, lança no ERP.
+
+Na Gestão de Fornecedores, o próprio fornecedor faz o autoatendimento com onboarding guiado, envia os documentos pelo portal e a recepção e conferência acontecem automáticas. A integração nativa com SAP e TOTVS leva tudo para o seu ERP sem digitação.
+
+Com a Reforma Tributária pedindo mais controle sobre a cadeia, ter isso estruturado deixa você à frente.
+
+Na demo interativa, você vê o portal pela ótica de quem usa.
+
+CTA: Ver a demo do Portal de Fornecedores
+
+Abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-meta"><b>Assunto:</b> quantos e-mails você troca para receber uma nota? <span style="color:var(--mid);">(50)</span> · <b>Prévia:</b> tem um jeito melhor <span style="color:var(--mid);">(19)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Receber documento de fornecedor costuma ser uma novela: pede a nota, cobra de novo, confere na mão, lança no ERP.
+
+Na Gestão de Fornecedores, o próprio fornecedor faz o autoatendimento com onboarding guiado, envia os documentos pelo portal e a recepção e conferência acontecem automáticas. A integração nativa com SAP e TOTVS leva tudo para o seu ERP sem digitação.
+
+Com a Reforma Tributária pedindo mais controle sobre a cadeia, ter isso estruturado deixa você à frente.
+
+Na demo interativa, você vê o portal pela ótica de quem usa.
+
+[CTA] Ver a demo do Portal de Fornecedores →
+
+Abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header de e-mail</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 300 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 400 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite. Representação de uma linha do tempo horizontal com 4 marcos (nota emitida, recebida, em aprovação, paga), cada um com um ícone simples. Texto laranja: "Gestão de Fornecedores". Subtítulo branco: "Rastreabilidade de ponta a ponta". Logo Qive no canto.</td></tr>
+          <tr><td>Estilo</td><td>Técnico, foco em fluxo e transparência. Sem stock photo.</td></tr>
+        </table>
+      </div>
+
+      <div class="briefing body-brief">
+        <div class="briefing-label">Criativos para o corpo do e-mail</div>
+        <div class="brief-asset">
+          <div class="ba-name">1. Ilustração da linha do tempo do fornecedor</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 260 px · <b>Formato:</b> PNG ou SVG · <b>Descrição:</b> linha do tempo horizontal com 4 marcos (nota emitida, recebida, em aprovação, paga), o último em verde. Mostrar dois avatares pequenos acompanhando, "você" e "fornecedor". Após o parágrafo sobre visibilidade para os dois lados.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">2. Selo de integração nativa</div>
+          <div class="ba-spec"><b>Tamanho:</b> 400 × 120 px · <b>Formato:</b> PNG fundo transparente · <b>Descrição:</b> faixa com "integração nativa" e os nomes SAP e TOTVS em blocos neutros, sem usar os logotipos oficiais das marcas. Acompanha o parágrafo sobre ERP.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">3. Botão de CTA</div>
+          <div class="ba-spec"><b>Tamanho:</b> 320 × 56 px · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> botão laranja, texto branco "Explorar a demo do Portal de Fornecedores", link rastreado para a demo do Portal de Fornecedores.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP CHAT 3 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--purple-light);color:var(--purple);">InApp Chat 3 · 20/07 (Seg)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Pergunta sobre a comunicação atual com fornecedores</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Chat 3 de 3</div>
+        <div class="disparo-date">Segunda-feira, 20 de Julho — disparo via plataforma</div>
+      </div>
+      <span class="disparo-canal canal-chat">InApp Chat</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Abre com pergunta sobre a comunicação atual com fornecedores. Exibir mensagem completa. Tom de conversa.</div>
+
+      <div class="copy-label">Opção A — pergunta sobre o método atual</div>
+      <div class="copy-box" data-copy="Oi, [Nome]! Como você se comunica hoje com seus fornecedores para receber notas e acompanhar pagamento, ainda por e-mail e telefone? Dá para centralizar tudo em um portal, onde o fornecedor acompanha sozinho da emissão da nota até a confirmação do pagamento. Quer ver como funciona? Tenho uma demo interativa rápida. 🧡
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-body">Oi, [Nome]! Como você se comunica hoje com seus fornecedores para receber notas e acompanhar pagamento, ainda por e-mail e telefone? Dá para centralizar tudo em um portal, onde o fornecedor acompanha sozinho da emissão da nota até a confirmação do pagamento. Quer ver como funciona? Tenho uma demo interativa rápida. 🧡</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — foco em tracking</div>
+      <div class="copy-box" data-copy="Oi, [Nome]. Você sabia que dá para o seu fornecedor acompanhar o status do pagamento em tempo real, sem precisar te ligar? A linha do tempo da Gestão de Fornecedores mostra cada etapa para os dois lados. Posso te enviar uma demo interativa para ver na prática?
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-body">Oi, [Nome]. Você sabia que dá para o seu fornecedor acompanhar o status do pagamento em tempo real, sem precisar te ligar? A linha do tempo da Gestão de Fornecedores mostra cada etapa para os dois lados. Posso te enviar uma demo interativa para ver na prática?</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP 3 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--green-light);color:var(--green);">WhatsApp 3 · 21/07 (Ter)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Reforço pós e-mail · dor do fornecedor</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">WhatsApp 3 de 3</div>
+        <div class="disparo-date">Terça-feira, 21 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-wpp">WhatsApp</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Curto e direto, focado no ponto de dor do fornecedor. Link rastreado. Botões de resposta rápida.</div>
+
+      <div class="copy-label">Opção A — CTA "Quero ver a demo"</div>
+      <div class="copy-box" data-copy="Quantas vezes seu fornecedor liga só para saber se a nota chegou ou se o pagamento saiu?
+
+Na Gestão de Fornecedores da Qive, ele acompanha tudo sozinho por uma linha do tempo. Menos cobrança para o seu time.
+
+[Botão 1] Quero ver a demo
+[Botão 2] Falar com o time
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-body">Quantas vezes seu fornecedor liga só para saber se a nota chegou ou se o pagamento saiu?
+
+Na Gestão de Fornecedores da Qive, ele acompanha tudo sozinho por uma linha do tempo. Menos cobrança para o seu time.
+
+🟢 *Quero ver a demo*
+🟢 *Falar com o time*</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — CTA "Me mostre como"</div>
+      <div class="copy-box" data-copy="Receber nota de fornecedor não precisa ser uma novela de e-mail. No portal da Qive, o fornecedor envia sozinho e a conferência entra no seu ERP automática, com SAP e TOTVS nativos.
+
+Quer ver na prática?
+
+[Botão 1] Me mostre como
+[Botão 2] Agora não
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-body">Receber nota de fornecedor não precisa ser uma novela de e-mail. No portal da Qive, o fornecedor envia sozinho e a conferência entra no seu ERP automática, com SAP e TOTVS nativos.
+
+Quer ver na prática?
+
+🟢 *Me mostre como*
+🟢 *Agora não*</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INAPP POST 3 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--amber-light);color:var(--amber);">InApp Post 3 · 22/07 (Qua)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Post resumido · tracking em tempo real</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">InApp Post 3 de 3</div>
+        <div class="disparo-date">Quarta-feira, 22 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-inapp">InApp Post</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Foco em um benefício específico: tracking em tempo real para o fornecedor. CTA por botão para a demo.</div>
+
+      <div class="copy-label">Opção A — benefício único em destaque</div>
+      <div class="copy-box" data-copy="Seu fornecedor acompanhando o pagamento em tempo real. Sem te ligar.
+
+Na Gestão de Fornecedores da Qive, a linha do tempo mostra cada etapa para os dois lados:
+- Nota emitida
+- Documento recebido e conferido
+- Em aprovação
+- Pagamento confirmado
+
+Menos cobrança, mais transparência, uma cadeia que você audita quando quiser.
+
+[Botão] Ver a demo do Portal de Fornecedores
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-body"><b>Seu fornecedor acompanhando o pagamento em tempo real. Sem te ligar.</b>
+
+Na Gestão de Fornecedores da Qive, a linha do tempo mostra cada etapa para os dois lados:
+✓ Nota emitida
+✓ Documento recebido e conferido
+✓ Em aprovação
+✓ Pagamento confirmado
+
+Menos cobrança, mais transparência, uma cadeia que você audita quando quiser.
+
+[Botão] Ver a demo do Portal de Fornecedores →</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — pergunta direta</div>
+      <div class="copy-box" data-copy="Seu fornecedor sabe onde está a nota dele agora?
+
+Com a Gestão de Fornecedores, ele tem essa resposta em tempo real, e você também. Tracking completo da emissão à confirmação de pagamento, com comunicação centralizada em um portal só.
+
+Com a Reforma Tributária pedindo mais rastreabilidade, isso vira diferencial.
+
+[Botão] Conhecer na demo do portal
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-body"><b>Seu fornecedor sabe onde está a nota dele agora?</b>
+
+Com a Gestão de Fornecedores, ele tem essa resposta em tempo real, e você também. Tracking completo da emissão à confirmação de pagamento, com comunicação centralizada em um portal só.
+
+Com a Reforma Tributária pedindo mais rastreabilidade, isso vira diferencial.
+
+[Botão] Conhecer na demo do portal →</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Banner InApp Post 3</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 400 px</td></tr>
+          <tr><td>Formato</td><td>PNG, máximo 500 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite escuro. Lado esquerdo: linha do tempo vertical com 4 status (emitida, recebida, em aprovação, paga), o último destacado em verde. Lado direito: texto "Seu fornecedor acompanha em tempo real" e botão laranja "Ver o portal". Logo Qive no canto.</td></tr>
+          <tr><td>Estilo</td><td>Sensação de transparência e progresso. Cores de status sutis, sem poluição visual.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-MAIL 6 -->
+  <div class="week-header">
+    <span class="week-num" style="background:var(--blue-light);color:var(--blue);">E-mail 6 · 28/07 (Ter)</span>
+    <span class="week-line"></span>
+    <span class="week-theme">Fechamento da campanha · visão de ponta a ponta</span>
+  </div>
+  <div class="disparo">
+    <div class="disparo-header">
+      <div>
+        <div class="disparo-num">E-mail 6 de 6</div>
+        <div class="disparo-date">Terça-feira, 28 de Julho de 2026</div>
+      </div>
+      <span class="disparo-canal canal-email">E-mail</span>
+    </div>
+    <div class="disparo-body">
+      <div class="disparo-sub">Encerra a onda e a campanha amarrando as três frentes. Tom de parceria, sem pressão. Abre conversa.</div>
+
+      <div class="copy-label">Opção A — costura das três frentes</div>
+      <div class="copy-box" data-copy="Assunto: documentos, pagamentos e fornecedores. Um fluxo só
+Linha prévia: você viu as três frentes
+
+Oi, [Nome].
+
+Nas últimas semanas, mostramos as três frentes da Qive: a captura dos documentos, o controle dos pagamentos e a rastreabilidade com fornecedores.
+
+Separadas, cada uma já ajuda. Juntas, elas fecham a sua operação fiscal e financeira de ponta a ponta, em um lugar só. É isso que torna a Qive a única solução que conecta tudo isso.
+
+Se ficou alguma frente que você ainda não explorou, as demos interativas continuam disponíveis para você ver no seu ritmo.
+
+CTA: Rever as demos da Qive
+
+Um abraço, e obrigado por percorrer isso com a gente,
+Time Qive
+Link: https://descubra.qive.com.br/demo-portal-de-fornecedores">
+        <div class="copy-meta"><b>Assunto:</b> documentos, pagamentos e fornecedores: um fluxo <span style="color:var(--mid);">(50)</span> · <b>Prévia:</b> você viu as três frentes <span style="color:var(--mid);">(24)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Nas últimas semanas, mostramos as três frentes da Qive: a captura dos documentos, o controle dos pagamentos e a rastreabilidade com fornecedores.
+
+Separadas, cada uma já ajuda. Juntas, elas fecham a sua operação fiscal e financeira de ponta a ponta, em um lugar só. É isso que torna a Qive a única solução que conecta tudo isso.
+
+Se ficou alguma frente que você ainda não explorou, as demos interativas continuam disponíveis para você ver no seu ritmo.
+
+[CTA] Rever as demos da Qive →
+
+Um abraço, e obrigado por percorrer isso com a gente,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="copy-label">Opção B — convite para conversa</div>
+      <div class="copy-box" data-copy="Assunto: ficou com dúvida em alguma frente? A gente conversa
+Linha prévia: estamos por aqui
+
+Oi, [Nome].
+
+Encerramos a série sobre o que dá para fazer com a Qive: Documentos, Pagamentos e Fornecedores.
+
+Se em algum momento você pensou "isso aqui faria diferença no meu caso, mas não sei por onde começar", é exatamente para isso que estamos aqui.
+
+Pode responder este e-mail com a sua dúvida ou falar com o seu time de contato na Qive. A gente te ajuda a ativar o que faz sentido para a sua operação.
+
+CTA 1: Falar com o time Qive
+CTA 2: Rever as demos
+
+Um abraço,
+Time Qive
+Link: https://descubra.qive.com.br/demo-gestao-de-documentos">
+        <div class="copy-meta"><b>Assunto:</b> ficou com dúvida em alguma frente? A gente conversa <span style="color:var(--mid);">(50)</span> · <b>Prévia:</b> estamos por aqui <span style="color:var(--mid);">(16)</span></div>
+        <hr class="subtle">
+        <div class="copy-body">Oi, [Nome].
+
+Encerramos a série sobre o que dá para fazer com a Qive: Documentos, Pagamentos e Fornecedores.
+
+Se em algum momento você pensou "isso aqui faria diferença no meu caso, mas não sei por onde começar", é exatamente para isso que estamos aqui.
+
+Pode responder este e-mail com a sua dúvida ou falar com o seu time de contato na Qive. A gente te ajuda a ativar o que faz sentido para a sua operação.
+
+[CTA] Falar com o time Qive →
+[CTA] Rever as demos →
+
+Um abraço,
+Time Qive</div>
+        <button class="copy-btn" onclick="copyDisparo(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo</button>
+      </div>
+
+      <div class="briefing">
+        <div class="briefing-label">Briefing de criativo — Header de e-mail</div>
+        <table>
+          <tr><td>Tamanho</td><td>1.200 × 300 px</td></tr>
+          <tr><td>Formato</td><td>PNG ou JPG, máximo 400 KB</td></tr>
+          <tr><td>Descrição</td><td>Fundo grafite. Três blocos lado a lado (Documentos, Pagamentos, Fornecedores) conectados por linhas que convergem para o símbolo da Qive ao centro. Texto laranja: "Tudo conectado". Subtítulo branco: "Sua operação de ponta a ponta". Fecha a narrativa da campanha.</td></tr>
+          <tr><td>Estilo</td><td>Síntese das três ondas. Sensação de unidade e fechamento.</td></tr>
+        </table>
+      </div>
+
+      <div class="briefing body-brief">
+        <div class="briefing-label">Criativos para o corpo do e-mail</div>
+        <div class="brief-asset">
+          <div class="ba-name">1. Infográfico das três frentes conectadas</div>
+          <div class="ba-spec"><b>Tamanho:</b> 600 × 320 px · <b>Formato:</b> PNG ou SVG · <b>Descrição:</b> diagrama circular com Documentos, Pagamentos e Fornecedores ligados em fluxo contínuo, cada um com um ícone e uma frase curta. Reforça a ideia de operação única. Centro do corpo.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">2. Trio de miniaturas das demos</div>
+          <div class="ba-spec"><b>Tamanho:</b> 3 imagens de 190 × 130 px · <b>Formato:</b> PNG, máximo 200 KB cada · <b>Descrição:</b> três cartões clicáveis, um por demo (Documentos, Pagamentos, Fornecedores), cada um com título e botão "abrir demo". Links rastreados distintos por frente.</div>
+        </div>
+        <div class="brief-asset">
+          <div class="ba-name">3. Botões de CTA</div>
+          <div class="ba-spec"><b>Tamanho:</b> 320 × 56 px cada · <b>Formato:</b> PNG ou bloco HTML · <b>Descrição:</b> botão laranja "Falar com o time Qive" e botão secundário com contorno "Rever as demos". Links rastreados.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJEÇÃO DE RESULTADOS -->
+<div class="section">
+  <div class="section-label"><div class="dot"></div><h2>Projeção de Resultados</h2></div>
+  <h3>Estimativa de engajamento por disparo</h3>
+  <p>Esta é uma campanha de educação e retenção. O sucesso não é medido por MQL. A projeção abaixo cobre apenas as taxas de engajamento por canal (abertura, clique, resposta), com lastro direto no histórico de campanhas CRM SMB. As metas de acesso e conclusão das demos e o impacto em cancelamento serão definidos com Atendimento e Expansão, e por isso aparecem como "a definir".</p>
+
+  <div class="proj-grid" style="margin: 24px 0;">
+    <div class="proj-card">
+      <div class="proj-num">25–29%</div>
+      <div class="proj-label">Abertura esperada de e-mail</div>
+      <div class="proj-desc">Faixa dos melhores assuntos técnicos: TOTVS 27,49–29,54% e GdP "Como começar bem" 25,89%</div>
+    </div>
+    <div class="proj-card featured">
+      <div class="proj-num">2,0–3,3%</div>
+      <div class="proj-label">Clique esperado no WhatsApp</div>
+      <div class="proj-desc">Faixa dos CTAs vencedores: "Quero conhecer" 2,39%, "Quero saber mais" 2,69%, "Sim, por favor" 3,33%</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">1,0–1,6%</div>
+      <div class="proj-label">Resposta esperada no InApp Chat</div>
+      <div class="proj-desc">Faixa histórica do Chat: 1,06% a 1,61% de resposta, com 53–68% de abertura na visualização completa</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto; margin-top:8px;">
+  <table class="kpi-table">
+    <thead>
+      <tr>
+        <th>Canal / Disparo</th>
+        <th>Taxa esperada</th>
+        <th>Referência histórica (planilha CRM SMB)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>E-mail 1 a 6 (abertura)</td>
+        <td class="highlight-cell">25–29%</td>
+        <td>Assuntos técnicos: "o erro no ERP..." 29,30%, "Uma dica simples..." 29,54%, "automatizar isso no TOTVS..." 28,89%, "Como começar bem com a GdP" 25,89%</td>
+      </tr>
+      <tr>
+        <td>E-mail 1 a 6 (clique sobre entregue)</td>
+        <td>0,3–0,8%</td>
+        <td>TOTVS e-mail 1: 0,81%; e-mail 2: 0,61%; clickthrough 2–3% sobre aberturas</td>
+      </tr>
+      <tr>
+        <td>WhatsApp 1 e 2 (1º toque de onda)</td>
+        <td class="highlight-cell">2,0–3,3%</td>
+        <td>"Quero conhecer" 2,39%; "Quero saber mais" 2,69%; "Sim, por favor" 3,33%</td>
+      </tr>
+      <tr>
+        <td>WhatsApp 3 (dor do fornecedor)</td>
+        <td>1,5–2,4%</td>
+        <td>Faixa de CTAs de ação em 1ª pessoa com base representativa</td>
+      </tr>
+      <tr>
+        <td>InApp Chat 1, 2, 3 (abertura)</td>
+        <td class="highlight-cell">53–68%</td>
+        <td>Chat semana 1 TOTVS 68,92%; Chat conversão (full) 53,78%</td>
+      </tr>
+      <tr>
+        <td>InApp Chat 1, 2, 3 (resposta)</td>
+        <td>1,0–1,6%</td>
+        <td>Chat: 1,42% (TOTVS), 1,06% e 1,61% (pós-Panorama)</td>
+      </tr>
+      <tr>
+        <td>InApp Post 1, 2, 3 (abertura)</td>
+        <td>17–25%</td>
+        <td>Post semana 1 TOTVS 24,70%; faixa histórica 17–25%</td>
+      </tr>
+      <tr>
+        <td>Acesso e conclusão das demos</td>
+        <td>A definir</td>
+        <td>Formato inédito na base, sem histórico comparável. Definir meta com lideranças após o 1º acesso medido.</td>
+      </tr>
+      <tr>
+        <td>Redução de cancelamento</td>
+        <td>A definir</td>
+        <td>KPI primário monitorado nos clusters durante e após as ondas. Meta a definir com Atendimento.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="card" style="margin-top: 20px; border-left: 3px solid var(--orange);">
+    <p style="color: var(--dark); font-size: 13px;"><strong>Nota metodológica:</strong> as faixas usam as taxas das campanhas mais comparáveis em estrutura (TOTVS e pós-Panorama). Não há projeção de negócios criados, NB ou receita: esta campanha não é de geração de MQL, e o brief define metas numéricas a serem fechadas com Atendimento e Expansão. Para transformar as taxas em volume absoluto, é preciso confirmar o tamanho de cada cluster e do split Grupo A / Grupo B antes do disparo. Pré-requisitos de medição: UTM e link rastreado em 100% dos WhatsApp e demos, e InApp Chat configurado para exibir a mensagem completa.</p>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  Campanha desenvolvida pela equipe de Growth Marketing · <span>Qive</span> · Junho e Julho 2026
+</footer>
+
+<script>
+function copyDisparo(btn){
+  var box = btn.closest('.copy-box');
+  var text = box.getAttribute('data-copy') || '';
+  var done = function(){
+    var original = btn.querySelector('svg') ? btn.innerHTML : btn.textContent;
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Copiado';
+    setTimeout(function(){
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar copy completo';
+    }, 1800);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, cb){
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
+  cb();
+}
+</script>
+
+</body>
+</html>
