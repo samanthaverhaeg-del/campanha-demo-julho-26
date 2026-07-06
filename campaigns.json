@@ -22,5 +22,13 @@
     "categoria": "retencao",
     "data_publicacao": "2026-07-15",
     "link": "panorama-jun-logistica/"
+  },
+  {
+    "nome": "GTM Gestão da Reforma Tributária",
+    "periodo": "Jul-Ago 2026",
+    "publico": "SMB — Expansão",
+    "categoria": "expansao",
+    "data_publicacao": "2026-07-06",
+    "link": "gtm_gestao_reforma_tributaria/"
   }
 ]
